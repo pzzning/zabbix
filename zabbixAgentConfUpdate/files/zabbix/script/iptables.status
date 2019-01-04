@@ -1,0 +1,6 @@
+#zhengning
+#20181205 add
+UserParameter=iptables.status,/bin/bash /etc/zabbix/script/iptables.status.sh
+#用途：公网服务器，防火墙状态检查 
+#文件：userparameter_zn.common.conf
+#传参：无

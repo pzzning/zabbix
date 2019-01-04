@@ -1,0 +1,68 @@
+#########################################
+#
+# zhengning
+#
+# 用途： 监控项新增记录
+#
+#########################################
+
+#20181126 add
+UserParameter=ftp.connectremotehost.status[*],/usr/bin/python /etc/zabbix/script/ftp.connectremotehost.status.py $1 $2 $3 $4
+#用途：agent连接远程ftp server,看FTP是否能连接成功
+#文件：userparameter_zn.common.conf
+#传参：ftp server ip地址 + ftp server 端口 + 用户名 + 密码
+
+
+#20181127 add 
+UserParameter=dpi.perseus.net.if.RECV.zcdrop[*],/bin/bash /etc/zabbix/script/dpi.perseus.net.if.RECV.zcdrop.sh $1
+#用途：采集口zcdrop丢包数据获取
+#文件：userparameter_zn.dpi.perseus.conf
+#传参：网卡名
+
+
+#20181205 add
+UserParameter=iptables.status,/bin/bash /etc/zabbix/script/iptables.status.sh
+#用途：公网服务器，防火墙状态检查 
+#文件：userparameter_zn.common.conf
+#传参：无
+
+#20181205 add
+UserParameter=zabbix.zabbixserver.became.not.upported,/bin/bash /etc/zabbix/script/zabbix.zabbixserver.became.not.upported.sh
+#用途：发现zabbix server存在的不支持监控项
+#文件：userparameter_zn.common.conf
+#传参：无
+
+#20181226 add
+UserParameter=service.status[*],/bin/bash /etc/zabbix/script/service.status.sh $1
+#用途：检查service服务状态
+#文件：userparameter_zn.common.conf
+#传参：service服务名，如crond
+
+#20190102 add
+UserParameter=system.secure.dangerousfile[*],/bin/bash /etc/zabbix/script/system.secure.dangerousfile.sh $1 $2
+#用途：系统安全，检查有无入侵。--- 可疑文件检查（662840/1223123为目前接触到的木马文件的文件size特征）
+#文件：userparameter_zn.common.conf
+#传参：$1:文件目录; $2:文件大小
+#  如：
+#     system.secure.dangerousfile[/lib,662840c]
+#     system.secure.dangerousfile[/boot,662840c]
+#     system.secure.dangerousfile[/bin,1223123c]
+#     system.secure.dangerousfile[/usr/sbin,1223123c]
+#
+#返回：指定目录下，size特征文件数量
+#
+
+#20190102 add
+UserParameter=system.secure.dangerouspid[*],/bin/bash /etc/zabbix/script/system.secure.dangerouspid.sh $1
+#用途：系统安全，检查有无入侵。--- 可疑进程检查（662840/1223123为目前接触到的木马文件的文件size特征）
+#文件：userparameter_zn.common.conf
+#传参：$1:文件大小
+#  如：
+#     system.secure.dangerouspid[662840]
+#     system.secure.dangerouspid[1223123]
+#
+#返回：存活进程中，存活进程已打开文件的文件size特征文件数量
+#
+#备注：lsof（list open files）是一个列出当前系统打开文件的工具。
+#
+

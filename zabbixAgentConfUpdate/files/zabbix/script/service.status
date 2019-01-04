@@ -1,0 +1,7 @@
+#zhengning
+#20181226 add
+UserParameter=service.status[*],/bin/bash /etc/zabbix/script/service.status.sh $1
+#用途：检查service服务状态
+#文件：userparameter_zn.common.conf
+#传参：service服务名
+#  如：service.status[crond]

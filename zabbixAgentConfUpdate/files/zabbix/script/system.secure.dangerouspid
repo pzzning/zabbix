@@ -1,0 +1,23 @@
+#zhengning
+#20190102 add
+UserParameter=system.secure.dangerouspid[*],/bin/bash /etc/zabbix/script/system.secure.dangerouspid.sh $1
+#用途：系统安全，检查有无入侵。--- 可疑进程检查（662840/1223123为目前接触到的木马文件的文件size特征）
+#文件：userparameter_zn.common.conf
+#传参：$1:文件大小
+#  如：
+#     system.secure.dangerouspid[662840]
+#     system.secure.dangerouspid[1223123]
+#
+#返回：存活进程中，存活进程已打开文件的文件size特征文件数量
+#
+#备注：lsof（list open files）是一个列出当前系统打开文件的工具。
+#
+
+:<<EOF
+
+echo `(
+lsof |grep 662840
+lsof |grep 1223123
+)|wc -l`
+
+EOF

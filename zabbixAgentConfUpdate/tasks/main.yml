@@ -1,0 +1,15 @@
+- name: copy /etc/zabbix.tar.gz
+  copy: src=zabbix.tar.gz dest=/etc/
+
+- name: tar -zxvf /etc/zabbix.tar.gz
+  shell: cd /etc && tar -zxvf /etc/zabbix.tar.gz
+
+- name: stop zabbix-agent
+  shell: /usr/bin/killall zabbix_agentd
+#  shell: /sbin/service zabbix-agent stop
+
+- name: start zabbix-agent
+  shell: /usr/sbin/zabbix_agentd -c /etc/zabbix/zabbix_agentd.conf
+
+#- name: chkconfig zabbix-agent
+#  shell: /sbin/chkconfig zabbix-agent on

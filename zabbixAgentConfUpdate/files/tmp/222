@@ -1,0 +1,1 @@
+dmidecode -t memory|egrep 'Array Handle|Size'|awk '{printf (NR%2)?$0"\t":$0"\n"}'|awk '{a[$3]=a[$3]"\t"$5 }END{for(i in a){print a[i]}}' |sort -u |wc -l

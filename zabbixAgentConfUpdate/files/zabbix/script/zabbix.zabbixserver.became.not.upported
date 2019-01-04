@@ -1,0 +1,6 @@
+#zhengning
+#20181205 add
+UserParameter=zabbix.zabbixserver.became.not.upported,/bin/bash /etc/zabbix/script/zabbix.zabbixserver.became.not.upported.sh
+#用途：发现zabbix server存在的不支持监控项
+#文件：userparameter_zn.common.conf
+#传参：无

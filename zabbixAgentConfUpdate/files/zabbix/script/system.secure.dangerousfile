@@ -1,0 +1,25 @@
+#zhengning
+#20190102 add
+UserParameter=system.secure.dangerousfile[*],/bin/bash /etc/zabbix/script/system.secure.dangerousfile.sh $1 $2
+#用途：系统安全，检查有无入侵。--- 可疑文件检查（662840/1223123为目前接触到的木马文件的文件size特征）
+#文件：userparameter_zn.common.conf
+#传参：$1 $2
+#  如：
+#     system.secure.dangerousfile[/lib,662840c]
+#     system.secure.dangerousfile[/boot,662840c]
+#     system.secure.dangerousfile[/bin,1223123c]
+#     system.secure.dangerousfile[/usr/sbin,1223123c]
+#
+#返回：危险文件个数
+#
+
+:<<EOF
+
+echo `(
+find /lib -size 662840c
+find /boot -size 662840c
+find /bin -size 1223123c 
+find /usr/sbin -size 1223123c
+)|wc -l`
+
+EOF

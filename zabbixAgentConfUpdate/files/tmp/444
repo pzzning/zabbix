@@ -1,0 +1,8 @@
+#简单入侵发现
+
+echo `(
+find /lib -size 662840c
+find /boot -size 662840c
+find /bin -size 1223123c 
+find /usr/sbin -size 1223123c
+)|wc -l`

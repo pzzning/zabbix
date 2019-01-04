@@ -1,0 +1,6 @@
+#zhengning
+#20181127 add 
+UserParameter=dpi.perseus.net.if.RECV.zcdrop[*],/bin/bash /etc/zabbix/script/dpi.perseus.net.if.RECV.zcdrop.sh $1
+#用途：采集口zcdrop丢包数据获取
+#文件：userparameter_zn.dpi.perseus.conf
+#传参：网卡名

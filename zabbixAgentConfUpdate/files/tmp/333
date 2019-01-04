@@ -1,0 +1,1 @@
+cat -v /etc/newiup/newiup-conf.yaml|sed 's/\^M//g'|egrep 'addr|username|passwd' |awk '{printf ((NR%3==0)?$0"\n":$0"\t")}'|sort -u

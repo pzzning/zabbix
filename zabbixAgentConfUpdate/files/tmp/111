@@ -1,0 +1,1 @@
+cat /proc/cpuinfo |grep -E 'physical id|model name'|sort -u |awk -F ':' '{printf NR==1?$2:""}END{printf " * " NR-1}' && /usr/sbin/dmidecode -t memory |grep Size |grep  -v 'No'|uniq -c |awk '{printf " | " $0}'

@@ -1,0 +1,6 @@
+#zhengning
+#20181126 add
+UserParameter=ftp.connectremotehost.status[*],/usr/bin/python /etc/zabbix/script/ftp.connectremotehost.status.py $1 $2 $3 $4
+#用途：agent连接远程ftp server,看FTP是否能连接成功
+#文件：userparameter_zn.common.conf
+#传参：ftp server ip地址 + ftp server 端口 + 用户名 + 密码
