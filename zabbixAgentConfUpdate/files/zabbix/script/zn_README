@@ -66,3 +66,14 @@ UserParameter=system.secure.dangerouspid[*],/bin/bash /etc/zabbix/script/system.
 #备注：lsof（list open files）是一个列出当前系统打开文件的工具。
 #
 
+#20190108 add
+UserParameter=user.login.failed,/bin/bash /etc/zabbix/script/user.login.failed.sh
+#用途：用户登陆失败次数统计。
+#文件：userparameter_zn.common.conf
+#传参：无
+
+#20190108 add
+UserParameter=user.login.success,/bin/bash /etc/zabbix/script/user.login.success.sh
+#用途：用户登陆成功次数统计。
+#文件：userparameter_zn.common.conf
+#传参：$1:过滤用户名

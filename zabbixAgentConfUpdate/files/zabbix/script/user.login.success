@@ -1,0 +1,6 @@
+#zhengning
+#20190108 add
+UserParameter=user.login.success,/bin/bash /etc/zabbix/script/user.login.success.sh
+#用途：用户登陆成功次数统计。
+#文件：userparameter_zn.common.conf
+#传参：$1:过滤用户名

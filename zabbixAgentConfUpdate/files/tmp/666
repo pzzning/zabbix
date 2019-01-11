@@ -1,1 +1,2 @@
 last|grep "`date |awk '{print substr($0,1,10)}'`" -c
+lastb

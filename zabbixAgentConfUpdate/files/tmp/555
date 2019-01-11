@@ -1,5 +1,0 @@
-#stop进程数
-ps -eo stat,pid,ppid,cmd|grep ^[Tt] |wc -l
-#僵死进程数
-ps -eo stat,pid,ppid,cmd|grep ^[Zz] |wc -l
-

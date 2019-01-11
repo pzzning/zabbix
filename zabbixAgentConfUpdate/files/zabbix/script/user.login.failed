@@ -1,0 +1,6 @@
+#zhengning
+#20190108 add
+UserParameter=user.login.failed,/bin/bash /etc/zabbix/script/user.login.failed.sh
+#用途：用户登陆失败次数统计。
+#文件：userparameter_zn.common.conf
+#传参：无
