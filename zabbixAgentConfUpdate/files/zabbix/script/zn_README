@@ -38,6 +38,18 @@ UserParameter=service.status[*],/bin/bash /etc/zabbix/script/service.status.sh $
 #文件：userparameter_zn.common.conf
 #传参：service服务名，如crond
 
+#20181227 update
+UserParameter=net.if.status[*],/bin/bash /etc/zabbix/script/net.if.status.sh $1
+#用途：查看网卡UP/DOWN状态。
+#文件：userparameter_zn.common.conf
+#传参：$1:网卡名
+#  如：
+#     net.if.status[eth0]
+#
+#返回：
+#    1：UP
+#    0：DOWN
+
 #20190102 add
 UserParameter=system.secure.dangerousfile[*],/bin/bash /etc/zabbix/script/system.secure.dangerousfile.sh $1 $2
 #用途：系统安全，检查有无入侵。--- 可疑文件检查（662840/1223123为目前接触到的木马文件的文件size特征）
