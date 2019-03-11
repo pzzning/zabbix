@@ -8,7 +8,7 @@ from ftplib import FTP
 def ftp_open(host='',port='21',user='',passwd=''): 
     try:
         ftp=FTP()
-        ftp.connect(host,port,3)
+        ftp.connect(host,port,15)
         data=ftp.login(user,passwd)
         return 1
     except:

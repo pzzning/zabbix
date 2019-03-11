@@ -1,0 +1,6 @@
+#zhengning
+#20190311 add
+UserParameter=newiup.logcheck,/bin/bash /etc/zabbix/script/newiup.logcheck.sh
+#用途：newiup日志上报，上报日志log文件和上报成功日志txt记录文件数量比对，不一致，则存在上报失败情况。 
+#文件：userparameter_zn.newiup.conf
+#传参：无

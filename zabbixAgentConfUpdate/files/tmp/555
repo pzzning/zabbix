@@ -1,0 +1,12 @@
+#find ip from netstat
+IPlist_netstat=`netstat -putlan|grep [0-9]|awk '{print $5}'|awk -F\: '{print $1}'|awk -F\. '{print $1"."$2"."$3}'|sort -u`
+
+#find ip from iptables 
+IPlist_iptables=`iptables -nL|grep [0-9]|awk '{print $4}'|awk -F\. '{print $1"."$2"."$3}'|sort -u`
+
+for ip_netstat in $IPlist_netstat;
+do
+echo $ip_netstat":"
+echo $IPlist_iptables |grep $ip_netstat -c
+
+done

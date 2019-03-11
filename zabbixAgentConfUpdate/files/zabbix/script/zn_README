@@ -77,3 +77,17 @@ UserParameter=user.login.success,/bin/bash /etc/zabbix/script/user.login.success
 #用途：用户登陆成功次数统计。
 #文件：userparameter_zn.common.conf
 #传参：$1:过滤用户名
+
+#zhengning
+#20190124 add
+UserParameter=file.number[*],/bin/bash /etc/zabbix/script/file.number.sh $1
+#用途：指定目录下文件总数量统计。
+#文件：userparameter_zn.common.conf
+#传参：$1:目录路径
+
+#zhengning
+#20190311 add
+UserParameter=newiup.logcheck,/bin/bash /etc/zabbix/script/newiup.logcheck.sh
+#用途：newiup日志上报，上报日志log文件和上报成功日志txt记录文件数量比对，不一致，则存在上报失败情况。 
+#文件：userparameter_zn.common.conf
+#传参：无

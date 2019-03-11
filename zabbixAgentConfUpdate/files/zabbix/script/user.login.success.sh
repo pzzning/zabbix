@@ -4,4 +4,4 @@
 
 # user login success
 
-/usr/bin/last |grep $1 |wc -l
+/usr/bin/last |grep "$1" |wc -l

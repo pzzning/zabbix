@@ -1,0 +1,6 @@
+#zhengning
+#20190124 add
+UserParameter=file.number[*],/bin/bash /etc/zabbix/script/file.number.sh $1
+#用途：指定目录下文件总数量统计。
+#文件：userparameter_zn.common.conf
+#传参：$1:目录路径

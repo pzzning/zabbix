@@ -1,0 +1,3 @@
+#newiup monitor-dir discovery
+#newiup 监控目录发现
+cat /etc/newiup/newiup-conf.yaml|grep -v "^#"|grep monitor-dir
