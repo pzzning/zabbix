@@ -1,0 +1,12 @@
+#zhengning
+#20190108 add
+UserParameter=net.if.status[*],/bin/bash /etc/zabbix/script/net.if.status.sh $1
+#用途：查看网卡UP/DOWN状态。
+#文件：userparameter_zn.common.conf
+#传参：$1:网卡名
+#  如：
+#     net.if.status[eth0]
+#
+#返回：
+#    1：UP
+#    0：DOWN
